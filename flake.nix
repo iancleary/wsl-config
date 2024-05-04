@@ -44,8 +44,6 @@
           }
       );
 
-      homeManagerModules = import ./modules/home-manager;
-
       devShells = forAllSystems (system: {
         default = nixpkgs.legacyPackages.${system}.callPackage ./shell.nix { };
         lint = nixpkgs.legacyPackages.${system}.callPackage ./shells/lint.nix { };
@@ -56,9 +54,8 @@
       homeConfigurations = 
         let
           # defaultModules = (builtins.attrValues homeManagerModules) ++ [
-          defaultModules = [
+          defaultHomeManagerModules = [
             ./modules/home-manager
-            home-manager.nixosModules.default
             terminal-config.homeManagerModules.default
           ];
           specialArgs = { inherit inputs outputs; };
@@ -67,9 +64,8 @@
           # Ubuntu WSL at home
           windows-tower = home-manager.lib.homeManagerConfiguration {
             pkgs = legacyPackages.x86_64-linux;
-            extraSpecialArgs = { inherit inputs outputs; };
-            
-            modules = (builtins.attrValues defaultModules) ++ [
+            extraSpecialArgs = specialArgs;
+            modules = defaultHomeManagerModules ++ [
               ./wsl/windows-tower/default.nix
             ];
           };
