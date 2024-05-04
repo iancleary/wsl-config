@@ -34,6 +34,7 @@ cd nixos-config
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 # Open tempoary shell with nix and home-manager (shell.nix)
+# if no flake.lock exists, run `nix flake update`
 nix-shell
 
 # Remove nix (this is necessary, so home-manager can install nix)
