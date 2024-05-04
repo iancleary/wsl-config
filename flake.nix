@@ -55,7 +55,9 @@
 
       homeConfigurations = 
         let
-          defaultModules = (builtins.attrValues homeManagerModules) ++ [
+          # defaultModules = (builtins.attrValues homeManagerModules) ++ [
+          defaultModules = [
+            ./modules/home-manager
             home-manager.nixosModules.default
             terminal-config.homeManagerModules.default
           ];
