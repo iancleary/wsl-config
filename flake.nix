@@ -68,7 +68,7 @@
             extraSpecialArgs = { inherit inputs outputs; };
             
             modules = (builtins.attrValues defaultModules) ++ [
-              ./wsl/windows-tower
+              ./wsl/windows-tower/default.nix
             ];
           };
         };
