@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = 
+  outputs =
     { self
     , flake-utils
     , nixpkgs
@@ -30,18 +30,18 @@
     in
     rec {
       overlays = {
-          unstable = final: prev: {
-            unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-          };
-          neovimPlugins = terminal-config.overlays.default;
+        unstable = final: prev: {
+          unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+        };
+        neovimPlugins = terminal-config.overlays.default;
       };
 
       legacyPackages = forAllSystems (system:
-          import inputs.nixpkgs {
-              inherit system;
-              overlays = builtins.attrValues overlays;
-              config.allowUnfree = true;
-          }
+        import inputs.nixpkgs {
+          inherit system;
+          overlays = builtins.attrValues overlays;
+          config.allowUnfree = true;
+        }
       );
 
       devShells = forAllSystems (system: {
@@ -51,7 +51,7 @@
 
       formatter = forAllSystems (system: nixpkgs.legacyPackages."${system}".nixpkgs-fmt);
 
-      homeConfigurations = 
+      homeConfigurations =
         let
           # defaultModules = (builtins.attrValues homeManagerModules) ++ [
           defaultHomeManagerModules = [
