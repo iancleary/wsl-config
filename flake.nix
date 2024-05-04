@@ -53,7 +53,6 @@
 
       homeConfigurations =
         let
-          # defaultModules = (builtins.attrValues homeManagerModules) ++ [
           defaultHomeManagerModules = [
             ./modules/home-manager
             terminal-config.homeManagerModules.default
