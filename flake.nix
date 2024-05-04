@@ -15,15 +15,18 @@
     };
   };
 
-  outputs = inputs@{ self
+  outputs = 
+    { self
     , flake-utils
     , nixpkgs
     , nixpkgs-unstable
     , home-manager
     , terminal-config
-    }:
+    }@inputs:
     let
       forAllSystems = nixpkgs.lib.genAttrs flake-utils.lib.defaultSystems;
+    in
+    rec {
       overlays = {
           unstable = final: prev: {
             unstable = nixpkgs-unstable.legacyPackages.${prev.system};
@@ -47,8 +50,7 @@
       });
 
       formatter = forAllSystems (system: nixpkgs.legacyPackages."${system}".nixpkgs-fmt);
-    in
-    {
+
       homeConfigurations = {
         # Ubuntu WSL at home
         windows-tower = home-manager.lib.homeManagerConfiguration {
