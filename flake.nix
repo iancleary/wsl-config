@@ -22,8 +22,10 @@
     , nixpkgs-unstable
     , home-manager
     , terminal-config
+    , ...
     }@inputs:
     let
+      inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs flake-utils.lib.defaultSystems;
     in
     rec {
@@ -51,15 +53,24 @@
 
       formatter = forAllSystems (system: nixpkgs.legacyPackages."${system}".nixpkgs-fmt);
 
-      homeConfigurations = {
-        # Ubuntu WSL at home
-        windows-tower = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs self; };
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            ./wsl/windows-tower
+      homeConfigurations = 
+        let
+          defaultModules = (builtins.attrValues homeManagerModules) ++ [
+            home-manager.nixosModules.default
+            terminal-config.homeManagerModules.default
           ];
+          specialArgs = { inherit inputs outputs; };
+        in
+        {
+          # Ubuntu WSL at home
+          windows-tower = home-manager.lib.homeManagerConfiguration {
+            pkgs = legacyPackages.x86_64-linux;
+            extraSpecialArgs = { inherit inputs outputs; };
+            
+            modules = (builtins.attrValues defaultModules) ++ [
+              ./wsl/windows-tower
+            ];
+          };
         };
-      };
     };
 }

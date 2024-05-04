@@ -3,7 +3,7 @@
     username = "iancleary";
   };
 
-  myHome = {
+  myTerminal = {
     cli.personalGitEnable = true;
     tmux.enable = true;
     zsh.enable = true;
