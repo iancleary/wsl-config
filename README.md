@@ -58,12 +58,6 @@ usermod -s ~/.nix-profile/bin/zsh $USER
 home-manager switch --flake .
 ```
 
-## Live ISO
-
-```bash
-nix build .#nixosConfigurations.isoimage.config.system.build.isoImage
-```
-
 ## Resources
 
 - [Nix config template](https://github.com/Misterio77/nix-starter-configs)
