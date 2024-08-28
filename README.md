@@ -48,7 +48,18 @@ exit
 
 # Set zsh (installed by nix) as default shell
 echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells
-usermod -s ~/.nix-profile/bin/zsh $USER
+sudo usermod -s ~/.nix-profile/bin/zsh $USER
+```
+
+> Test in another terminal tab before closing first one!
+
+To revert, or reinstall if you have issues, use this to uninstall, then repeat the installation from the top
+
+```bash
+sudo nano /etc/shells
+# remove ~/.nix-profile/bin/zsh
+sudo usermod -s /usr/bin/bash $USER
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- uninstall
 ```
 
 ### Update
