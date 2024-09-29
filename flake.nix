@@ -68,6 +68,14 @@
               ./wsl/windows-tower/default.nix
             ];
           };
+          # Ubuntu WSL at home
+          framework = home-manager.lib.homeManagerConfiguration {
+            pkgs = legacyPackages.x86_64-linux;
+            extraSpecialArgs = specialArgs;
+            modules = defaultHomeManagerModules ++ [
+              ./wsl/windows-tower/default.nix
+            ];
+          };
         };
     };
 }
