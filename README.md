@@ -35,6 +35,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 # Open tempoary shell with nix and home-manager (shell.nix)
 # if no flake.lock exists, run `nix flake update`
+# if 755 permission error, restart windows
 nix-shell
 
 # Remove nix (this is necessary, so home-manager can install nix)
