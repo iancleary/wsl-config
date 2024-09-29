@@ -43,6 +43,7 @@ nix-env -e nix
 
 # Install the configuration (adjust to the configuration/hostname you want to use )
 home-manager switch --flake .#windows-tower
+home-manager switch --flake .#framework
 
 # Exit temporary shell
 exit
@@ -50,6 +51,9 @@ exit
 # Set zsh (installed by nix) as default shell
 echo ~/.nix-profile/bin/zsh | sudo tee -a /etc/shells
 sudo usermod -s ~/.nix-profile/bin/zsh $USER
+
+# for rustup (from nix flake iancleary/terminal-config)
+sudo apt install build-essential
 ```
 
 > Test in another terminal tab before closing first one!
