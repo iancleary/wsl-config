@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     terminal-config = {
-      url = "github:iancleary/terminal-config";
+      url = "github:iancleary/terminal-config/feat/neotree";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
