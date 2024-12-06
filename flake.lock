@@ -442,16 +442,15 @@
         "telescope-file-browser": "telescope-file-browser"
       },
       "locked": {
-        "lastModified": 1733375652,
-        "narHash": "sha256-xc8ASXMw/DhM1EP6VVhNCDqOF1X6jqoAauFdI74VD4M=",
+        "lastModified": 1733457433,
+        "narHash": "sha256-82mTwHowDmy0oVDMYA1HjcGF+ejz2UoPA+7Af3y1paI=",
         "owner": "iancleary",
         "repo": "terminal-config",
-        "rev": "552f6a65b88601eb7d183dd7da1c5a91f22e3b71",
+        "rev": "30a42eb2a11bfcf2ca4dd61ea61112315fc1b0ea",
         "type": "github"
       },
       "original": {
         "owner": "iancleary",
-        "ref": "feat/neotree",
         "repo": "terminal-config",
         "type": "github"
       }
