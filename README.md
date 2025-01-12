@@ -27,8 +27,8 @@ First make sure, your user is in the sudo/wheel group.
 sudo apt install git xz-utils curl
 
 # Clone this repository
-git clone https://github.com/iancleary/nixos-config.git
-cd nixos-config
+git clone https://github.com/iancleary/home-config.git
+cd home-config
 
 # Install nix (determinate-systems installation)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
@@ -54,6 +54,7 @@ sudo usermod -s ~/.nix-profile/bin/zsh $USER
 
 # for rustup (from nix flake iancleary/terminal-config)
 sudo apt install build-essential
+rustup default stable # or whatever toolchain you want
 ```
 
 > Test in another terminal tab before closing first one!
