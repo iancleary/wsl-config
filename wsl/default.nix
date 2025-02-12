@@ -1,9 +1,9 @@
 { _, ... }:
 
 {
-  home = rec {
+  home = {
     username = "iancleary";
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   myTerminal = {
