@@ -76,6 +76,14 @@
               ./wsl/default.nix
             ];
           };
+          # Ubuntu WSL at home
+          coolermaster = home-manager.lib.homeManagerConfiguration {
+            pkgs = legacyPackages.x86_64-linux;
+            extraSpecialArgs = specialArgs;
+            modules = defaultHomeManagerModules ++ [
+              ./wsl/default.nix
+            ];
+          };
         };
     };
 }
