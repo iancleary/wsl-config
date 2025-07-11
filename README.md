@@ -42,9 +42,9 @@ nix-shell
 nix-env -e nix
 
 # Install the configuration (adjust to the configuration/hostname you want to use )
-home-manager switch --flake .#windows-tower
-home-manager switch --flake .#framework
-home-manager switch --flake .#coolermaster
+home-manager switch --flake -b backup .#windows-tower
+home-manager switch --flake -b backup .#framework
+home-manager switch --flake -b backup .#coolermaster
 
 # Exit temporary shell
 exit
