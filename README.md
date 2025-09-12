@@ -27,8 +27,8 @@ First make sure, your user is in the sudo/wheel group.
 sudo apt install git xz-utils curl
 
 # Clone this repository
-git clone https://github.com/iancleary/home-config.git
-cd home-config
+git clone https://github.com/iancleary/wsl-config.git
+cd wsl-config
 
 # Install nix (determinate-systems installation)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
