@@ -33,7 +33,6 @@
         unstable = final: prev: {
           unstable = nixpkgs-unstable.legacyPackages.${prev.system};
         };
-        neovimPlugins = terminal-config.overlays.default;
       };
 
       legacyPackages = forAllSystems (system:
