@@ -3,7 +3,7 @@
   home = rec {
     username = "iancleary";
     homeDirectory = lib.mkForce "/home/${username}"; # lib.mkForce allows for user to already exist
-    stateVersion = lib.mkDefault "24.11";
+    stateVersion = lib.mkDefault "25.05";
   };
 
   home.sessionPath = [ "$HOME/.local/bin" ];

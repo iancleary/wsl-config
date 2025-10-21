@@ -1,6 +1,5 @@
 # My WSL configuration with Nix Flakes
 
-[![Made with Neovim](https://img.shields.io/badge/Made%20with-Neovim-green&?style=flat&logo=neovim)](https://neovim.io)
 [![NixOS](https://img.shields.io/badge/NixOS-24.05-blue?style=flat&logo=nixos&logoColor=white)](https://nixos.org)
 
 ### In WSL2
