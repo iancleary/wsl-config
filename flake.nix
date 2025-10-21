@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     terminal-config = {
-      url = "github:iancleary/terminal-config/feat/25.05";
+      url = "github:iancleary/terminal-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
