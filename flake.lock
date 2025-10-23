@@ -119,11 +119,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       },
       "locked": {
-        "lastModified": 1761189922,
-        "narHash": "sha256-Fxm81kFhgLyUWteR/lEt6G2XmSNAzWuU/yRscCdd0hM=",
+        "lastModified": 1761190117,
+        "narHash": "sha256-hfFVE6SA4QqXw4u0hjiFMkhnGVbSV36lm1+54XS4rsw=",
         "owner": "iancleary",
         "repo": "terminal-config",
-        "rev": "5310f673fb15ba88d344e5385fad8738faa5d3f0",
+        "rev": "e57948f791c8ac0e0d14bc9ea3d1df492d7ee305",
         "type": "github"
       },
       "original": {
